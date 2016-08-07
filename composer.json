@@ -1,5 +1,5 @@
 {
-    "name": "norbertkranitz/gophry-dto",
+    "name": "gophry/dto",
     "autoload": {
         "psr-0" : {
             "Gophry\\DTO" : "src"
