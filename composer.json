@@ -1,9 +1,8 @@
 {
     "name": "norbertkranitz/gophry-dto",
     "autoload": {
-        "psr-0" : {
-            "Gophry\\DTO" : "src"
-        }
-    }
+		"psr-4": {
+			"Gophry\\": "src/Gophry/"
+		}
+	}
 }
-
