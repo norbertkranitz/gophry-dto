@@ -2,7 +2,15 @@
 
 Gophry-dto is a simple library that helps you to transfer data between your PHP application layers
 
-## RequestDTO
+## Installation
+
+You can install the package with composer ([learn more](https://getcomposer.org/doc/01-basic-usage.md)).
+
+```
+composer require norbertkranitz/gophry-dto "dev-master"
+```
+
+## RequestDTOs
 
 Most of the PHP frameworks provide the request data in an array. Working with arrays is good, but what if we wrap/adapt this array into a simple object, so we can do some stuff on it, like validating?
 
@@ -102,7 +110,7 @@ echo $dto->getName();
 
 > Please note that the sub request DTO must have a request DTO value too to make it work
 
-## ResponeDTO
+## ResponeDTOs
 
 Most of the PHP frameworks require an array result - or an object result based an array value - as the result of an action. That's why we created the ```\Gophry\DTO\ResponseDTO``` class.
 
