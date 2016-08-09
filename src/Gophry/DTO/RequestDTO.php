@@ -2,7 +2,7 @@
 
 namespace Gophry\DTO;
 
-abstract class RequestDTO implements RequestDTOInterface {
+abstract class RequestDTO extends DTO implements RequestDTOInterface {
     
     public function bind(array $data) {
         foreach($data as $key => $value) {

@@ -2,7 +2,7 @@
 
 namespace Gophry\DTO;
 
-abstract class ResponseDTO implements ResponseDTOInterface {
+abstract class ResponseDTO extends DTO implements ResponseDTOInterface {
     
     public function toArray() {
         $properties = get_object_vars($this);
