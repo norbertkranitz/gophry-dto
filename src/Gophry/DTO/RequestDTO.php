@@ -3,22 +3,26 @@
 namespace Gophry\DTO;
 
 abstract class RequestDTO extends DTO implements RequestDTOInterface {
-    
-	private $data;
-	
+
+    protected $data;
+
     public function bind(array $data) {
-		$this->data = $data;
-        foreach($data as $key => $value) {
+        $this->data = $data;
+        foreach ($data as $key => $value) {
             if (property_exists($this, $key) && $this->{$key} instanceof RequestDTOInterface) {
-                $this->{$key}->bind($value);
+                if (is_string($value) && $newValue = json_decode($value, true)) {
+                    $this->{$key}->bind($newValue);
+                } else {
+                    $this->{$key}->bind($value);
+                }
             } else {
                 $this->{$key} = $value;
             }
         }
     }
-	
-	public function toAssoc() {
-		return $this->data;
-	}
-    
+
+    public function toAssoc() {
+        return $this->data;
+    }
+
 }
